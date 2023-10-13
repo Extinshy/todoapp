@@ -56,18 +56,18 @@ router.post('/completeTask', function(req, res, next) {
 });
 
 
-// router.post('/deleteTask', function(req, res, next) {
-//   const taskId = req.body._id;
-//   const completedDate = Date.now();
-//   Task.findByIdAndDelete(taskId)
-//     .then(() => { 
-//       console.log(`Deleted task $(taskId)`)      
-//       res.redirect('/'); }  )
-//     .catch((err) => {
-//       console.log(err);
-//       res.send('Sorry! Something went wrong.');
-//     });
-// });
+ router.post('/deleteTask', function(req, res, next) {
+   const taskId = req.body._id;
+   const completedDate = Date.now();
+   Task.findByIdAndDelete(taskId)
+     .then(() => { 
+       console.log(`Deleted task $(taskId)`)      
+       res.redirect('/'); }  )
+     .catch((err) => {
+       console.log(err);
+       res.send('Sorry! Something went wrong.');
+     });
+ });
 
 
 module.exports = router;
